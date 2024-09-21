@@ -1,0 +1,66 @@
+{
+	"name": "@accuser/mdast-util-directive-type-guards",
+	"version": "1.0.0",
+	"description": "TypeScript type guards for `mdast` directive nodes.",
+	"type": "module",
+	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"default": "./dist/index.js",
+			"import": {
+				"default": "./dist/index.js",
+				"types": "./dist/index.d.ts"
+			},
+			"require": {
+				"default": "./dist/cjs/index.js",
+				"types": "./dist/cjs/index.d.ts"
+			}
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "pnpm build:cjs && pnpm build:esm",
+		"build:cjs": "tsc --module commonjs --outDir dist/cjs",
+		"build:esm": "tsc",
+		"format": "prettier --write {src,test}/**/*.{js,ts}",
+		"lint": "eslint",
+		"test": "vitest"
+	},
+	"keywords": [
+		"directive",
+		"mdast",
+		"typescript",
+		"type guard"
+	],
+	"author": {
+		"email": "mhgibbons@me.com",
+		"name": "Matthew Gibbons",
+		"url": "https://github.com/accuser"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/accuser/mdast-util-directive-type-guards.git"
+	},
+	"bugs": {
+		"url": "https://github.com/accuser/mdast-util-type-directive-guards/issues"
+	},
+	"devDependencies": {
+		"@types/node": "^22.5.5",
+		"@typescript-eslint/eslint-plugin": "^8.6.0",
+		"@typescript-eslint/parser": "^8.6.0",
+		"eslint": "^9.11.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.3.3",
+		"tslib": "^2.7.0",
+		"typescript": "^5.6.2",
+		"vitest": "^2.1.1"
+	},
+	"dependencies": {
+		"@accuser/mdast-util-type-guards": "^1.0.3",
+		"mdast-util-directive": "^3.0.0"
+	}
+}
