@@ -83,7 +83,7 @@ Returns `true` if `node` is a valid `LeafDirective` node.
 import { isLeafDirective } from '@accuser/mdast-util-directive-type-guards';
 
 const node = {
-  type: 'textDirective',
+  type: 'leafDirective',
   name: 'foo',
   children: [{ type: 'text', value: 'Hello, world!' }]
 } as unknown;
