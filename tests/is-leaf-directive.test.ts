@@ -2,7 +2,7 @@ import { isLeafDirective } from '@accuser/mdast-util-directive-type-guards';
 import { describe, expect, it } from 'vitest';
 
 describe('isLeafDirective', () => {
-	it('returns `true` for a blockquote node', () => {
+	it('returns `true` for a leafDirective node', () => {
 		expect(isLeafDirective({ type: 'leafDirective', name: 'leaf', children: [] })).toBe(true);
 	});
 

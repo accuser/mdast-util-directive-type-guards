@@ -2,7 +2,7 @@ import { isContainerDirective } from '@accuser/mdast-util-directive-type-guards'
 import { describe, expect, it } from 'vitest';
 
 describe('isContainerDirective', () => {
-	it('returns `true` for a blockquote node', () => {
+	it('returns `true` for a containerDirective node', () => {
 		expect(
 			isContainerDirective({ type: 'containerDirective', name: 'container', children: [] })
 		).toBe(true);

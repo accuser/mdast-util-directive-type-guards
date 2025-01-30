@@ -2,7 +2,7 @@ import { isTextDirective } from '@accuser/mdast-util-directive-type-guards';
 import { describe, expect, it } from 'vitest';
 
 describe('isTextDirective', () => {
-	it('returns `true` for a blockquote node', () => {
+	it('returns `true` for a textDirective node', () => {
 		expect(isTextDirective({ type: 'textDirective', name: 'text', children: [] })).toBe(true);
 	});
 

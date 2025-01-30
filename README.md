@@ -14,9 +14,9 @@ npm install @accuser/mdast-util-directive-type-guards
 import { isTextDirective } from '@accuser/mdast-util-directive-type-guards';
 
 const node = {
-  type: 'textDirective',
-  name: 'foo',
-  children: [{ type: 'text', value: 'Hello, world!' }]
+	type: 'textDirective',
+	name: 'foo',
+	children: [{ type: 'text', value: 'Hello, world!' }]
 } as unknown;
 
 if (isTextDirective(node)) {
@@ -29,6 +29,7 @@ if (isTextDirective(node)) {
 This package exports the identifiers:
 
 - [`isContainerDirective`](api-iscontainterdirective)
+- [`isDirectives`](api-isdirectives)
 - [`isLeafDirective`](api-isleafdirective)
 - [`isTextDirective`](api-istextdirective)
 
@@ -40,8 +41,8 @@ Test if a given value is a valid Mdast `ContainerDirective` node.
 
 ###### Parameters
 
-* `node` (`unknown`)
-	- value to check.
+- `node` (`unknown`)
+  - value to check.
 
 ###### Returns
 
@@ -53,12 +54,42 @@ Returns `true` if `node` is a valid `ContainerDirective` node.
 import { isContainerDirective } from '@accuser/mdast-util-directive-type-guards';
 
 const node = {
-  type: 'containerDirective',
-  name: 'foo',
-  children: [{ type: 'text', value: 'Hello, world!' }]
+	type: 'containerDirective',
+	name: 'foo',
+	children: [{ type: 'text', value: 'Hello, world!' }]
 } as unknown;
 
 if (isContainerDirective(node)) {
+	console.log(node.name); // 'foo'
+	console.log(node.children[0]); // { type: 'text', value: 'Hello, world!' }
+}
+```
+
+### `isDirectives(node: unknown): node is Directives`
+
+Test if a given value is a valid Mdast `Directives` node.
+
+###### Parameters
+
+- `node` (`unknown`)
+  - value to check.
+
+###### Returns
+
+Returns `true` if `node` is a valid `Directives` node.
+
+###### Example
+
+```ts
+import { isDirectives } from '@accuser/mdast-util-directive-type-guards';
+
+const node = {
+	type: 'containerDirective',
+	name: 'foo',
+	children: [{ type: 'text', value: 'Hello, world!' }]
+} as unknown;
+
+if (isDirectives(node)) {
 	console.log(node.name); // 'foo'
 	console.log(node.children[0]); // { type: 'text', value: 'Hello, world!' }
 }
@@ -70,8 +101,8 @@ Test if a given value is a valid Mdast `LeafDirective` node.
 
 ###### Parameters
 
-* `node` (`unknown`)
-	- value to check.
+- `node` (`unknown`)
+  - value to check.
 
 ###### Returns
 
@@ -83,9 +114,9 @@ Returns `true` if `node` is a valid `LeafDirective` node.
 import { isLeafDirective } from '@accuser/mdast-util-directive-type-guards';
 
 const node = {
-  type: 'leafDirective',
-  name: 'foo',
-  children: [{ type: 'text', value: 'Hello, world!' }]
+	type: 'leafDirective',
+	name: 'foo',
+	children: [{ type: 'text', value: 'Hello, world!' }]
 } as unknown;
 
 if (isLeafDirective(node)) {
@@ -100,8 +131,8 @@ Test if a given value is a valid Mdast `TextDirective` node.
 
 ###### Parameters
 
-* `node` (`unknown`)
-	- value to check.
+- `node` (`unknown`)
+  - value to check.
 
 ###### Returns
 
@@ -113,9 +144,9 @@ Returns `true` if `node` is a valid `TextDirective` node.
 import { isTextDirective } from '@accuser/mdast-util-directive-type-guards';
 
 const node = {
-  type: 'textDirective',
-  name: 'foo',
-  children: [{ type: 'text', value: 'Hello, world!' }]
+	type: 'textDirective',
+	name: 'foo',
+	children: [{ type: 'text', value: 'Hello, world!' }]
 } as unknown;
 
 if (isTextDirective(node)) {
@@ -135,5 +166,6 @@ npm test
 [MIT](https://raw.githubusercontent.com/accuser/unist-util-type-guards/main/LICENSE)
 
 [api-iscontainterdirective]: #iscontainerdirectivenode-unknown-node-is-containerdirective
+[api-isdirectives]: #isdirectivesnode-unknown-node-is-directives
 [api-isleafdirective]: #isleafdirectivenode-unknown-node-is-leafdirective
 [api-istextdirective]: #istextdirectivenode-unknown-node-is-textdirective
